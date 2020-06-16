@@ -15,3 +15,17 @@ require_once 'init.php';
 error_reporting(E_ALL);
 set_error_handler('Core\Error::errorHandler');
 set_exception_handler('Core\Error::exceptionHandler');
+
+$router = new Core\Router();
+
+//Add the routes
+$router->add('', ['controller' => 'Home', 'action' => 'index']);
+$router->add('{controller}/{action}');
+$router->add('{controller}/{id:\d+}/{action}');
+$router->add('admin/{controller}/{action}', ['namespace' => 'Admin']);
+
+$router->dispatch($_SERVER['QUERY_STRING']);
+
+function err_log($message, $message_type = null, $destination = null, $extra_headers = null){
+    error_log($message, $message_type, $destination, $extra_headers);
+}
