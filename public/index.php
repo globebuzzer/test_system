@@ -6,6 +6,14 @@
  * Time: 23:18
  */
 
+session_start();
+date_default_timezone_set('Europe/London');
+
+/**
+ * Twig autolaoder
+ */
+$twig_loader = __DIR__ . '/../vendor/autoload.php';
+require_once $twig_loader;
 
 require_once 'init.php';
 
