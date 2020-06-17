@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!------------------------------------------Header------------------------------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/jquery-ui.theme.min.css"/>
+</head>
+
+<!----------------------------------------Body------------------------------------------------>
+<body>
+
+<div class="container" id="container">
+
+    {% block body %}
+    {% endblock %}
+
+</div>
+
+</body>
+</html>
