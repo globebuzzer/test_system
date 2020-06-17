@@ -25,17 +25,17 @@ class Home extends \Core\Controller
         ]);
     }
 
-    /**
-     * Method to load the login page
-     * @param $entree
-     * @param $sortie
-     */
-    public function administrationAction()
-    {
-        /*$token = Token::generate();
 
-        View::renderTemplate('Home/administration.php', [
+    /**
+     * Method to load the form page
+     * @return void
+     */
+    public function registerAction()
+    {
+        $token = Token::generate();
+
+        View::renderTemplate('Home/register.php', [
             'token'      => $token
-        ]);*/
+        ]);
     }
 }
