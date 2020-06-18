@@ -8,6 +8,11 @@
 class Input
 {
 
+    /**
+     * Check if any input entered
+     * @param string $type
+     * @return bool
+     */
     public static function exists($type = 'post'){
         switch($type){
             case 'post':
@@ -22,19 +27,27 @@ class Input
         }
     }
 
+    /**
+     * Check entered input if valid
+     * @param $item
+     * @return string
+     */
     public static function get_input($item){
 
         if(isset($_POST[$item])){
             return $_POST[$item];
         }elseif(isset($_GET[$item])){
             return $_GET[$item];
-        }elseif(isset($_FILES[$item])){
-            return $_FILES[$item];
         }
 
         return '';
     }
 
+    /**
+     * Filter input to return those allowed
+     * @param array $input
+     * @return array
+     */
     public static function get_allowed_input($input = []){
         $input_item = [];
 

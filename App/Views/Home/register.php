@@ -5,7 +5,7 @@
 {% block body %}
 
 <h2>Registration form</h2>
-    <form id="form-consult">
+    <form id="form-register" action="/home/submitRegistration" method="post">
         <div class="form-group">
             <label class="control-label" for="firstname">First Name</label>
             <input type="text" name="firstname" id="firstname" class="form-control" required />
@@ -23,12 +23,9 @@
             <input type="email" name="email" id="email" class="form-control" required/>
         </div>
         <!-- =============================== -->
-            <input type="hidden" name="token" value={{ token }}"/>
+            <input type="hidden" name="token" value="{{ token }}"/>
         <div class="form-group">
-            <button id="submit-consult" type="submit" class="btn btn-primary btn-submit" disabled>Submit</button>
-            <button class="buttonload btn btn-primary btn-submit" id='submitting'>
-                <i class="fa fa-refresh fa-spin"></i>  Sending...
-            </button>
+            <button id="submit-register" type="submit" class="btn btn-primary btn-submit">Submit</button>
         </div>
     </form>
 

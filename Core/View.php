@@ -4,6 +4,7 @@
  * User: louison
  * Date: 17/06/20
  * Time: 14:15
+ * Written by Dave Hollingworth (MVC from scratch)
  */
 namespace Core;
 class View
