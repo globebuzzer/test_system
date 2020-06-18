@@ -28,8 +28,6 @@ class Input
             return $_POST[$item];
         }elseif(isset($_GET[$item])){
             return $_GET[$item];
-        }elseif(isset($_FILES[$item])){
-            return $_FILES[$item];
         }
 
         return '';

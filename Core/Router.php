@@ -4,6 +4,7 @@
  * User: louison
  * Date: 16/06/20
  * Time: 23:57
+ * Written by Dave Hollingworth (MVC from scratch)
  */
 namespace Core;
 class Router
@@ -22,7 +23,6 @@ class Router
 
     /**
      * Add a route to the routing table
-     *
      * @param string $route the route url
      * @param array $params Parameters (controller, action, etc.
      *
@@ -47,7 +47,6 @@ class Router
 
     /**
      * Get all the routes from the routing table
-     *
      * @return array
      */
     public function getRoutes()
@@ -58,7 +57,6 @@ class Router
     /**
      * Match the route to the routes in the routing table, setting the $params
      * property if a route is found.
-     *
      * @param string $url The route URL
      *
      * @return boolean  true if a match found, false otherwise
@@ -96,7 +94,6 @@ class Router
      * Dispatch the route, creating the controller object and running the
      * action method
      * @param string $url the route URL
-     *
      * @return void
      */
     public function dispatch($url)
@@ -128,9 +125,7 @@ class Router
     }
 
     /**
-     * Convert the string with hyphens to StudlyCaps,
-     * e.g. post-authors => PostAuthors
-     *
+     * Convert the string with hyphens to StudlyCaps
      * @param string $string The string to convert
      *
      * @return string
@@ -143,22 +138,7 @@ class Router
     /**
      * Remove the query string variables from the URL (if any). As the full
      * query string is used for the route, any variables at the end will need
-     * to be removed before the route is matched to the routing table. For
-     * example:
-     *
-     *   URL                           $_SERVER['QUERY_STRING']  Route
-     *   -------------------------------------------------------------------
-     *   localhost                     ''                        ''
-     *   localhost/?                   ''                        ''
-     *   localhost/?page=1             page=1                    ''
-     *   localhost/posts?page=1        posts&page=1              posts
-     *   localhost/posts/index         posts/index               posts/index
-     *   localhost/posts/index?page=1  posts/index&page=1        posts/index
-     *
-     * A URL of the format localhost/?page (one variable name, no value) won't
-     * work however. (NB. The .htaccess file converts the first ? to a & when
-     * it's passed through to the $_SERVER variable).
-     *
+     * to be removed before the route is matched to the routing table.
      * @param string $url The full URL
      *
      * @return string The URL with the query string variables removed
@@ -179,9 +159,7 @@ class Router
     }
 
     /**
-     * Convert the string with hyphens to camelCase,
-     * e.g. add-new => addNew
-     *
+     * Convert the string with hyphens to camelCase
      * @param string $string The string to convert
      *
      * @return string

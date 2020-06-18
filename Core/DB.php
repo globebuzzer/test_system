@@ -31,7 +31,7 @@ class DB extends Model
             $this->_pdo = new PDO('mysql:host='.Config::get_config('mysql/host').';dbname='.Config::get_config('mysql/db'), Config::get_config('mysql/username') , Config::get_config('mysql/password'));
 
         }catch(PDOException $e){
-            Redirect::to($e->getMessage(), 'error_connect_db.php');
+            //Error handling here
         }
     }
 

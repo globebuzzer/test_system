@@ -19,7 +19,7 @@ class Redirect {
                         break;
                 }
             }
-            header('Location: '.$location.'?msg:'.$msg);
+            header('Location: '.$location);
             exit();
         }
     }
