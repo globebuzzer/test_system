@@ -21,7 +21,7 @@ class Home extends \Core\Controller
      */
     public function indexAction()
     {
-
+        //This a dummy page for test
         View::renderTemplate('Home/index.php', [
             'name'      => 'Dear Customer',
             'colours'   => ['red', 'green', 'brown']
