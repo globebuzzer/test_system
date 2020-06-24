@@ -7,8 +7,6 @@
 
 *.log
 
-init.php
-
 .DS_Store
 
 logs/
